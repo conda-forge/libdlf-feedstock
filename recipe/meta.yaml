@@ -1,5 +1,5 @@
 {% set name = "libdlf" %}
-{% set version = "0.0.2" %}
+{% set version = "0.0.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 101cb64becf2f114deeacadd911cf5c8d0072c4aed8f86899b9114496313b45c
+  sha256: cb0bc7397866bd9a5f68b1a57029ac21dd2f5df143ce1cc6de2f640f86f3613c
   patches:
     # The package is originally created in `libdlf/packages/python`; this means
     # that setup.py has `use_scm_version={"root": "../../"}` etc - which
@@ -19,7 +19,7 @@ source:
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 
 requirements:
