@@ -1,5 +1,5 @@
 {% set name = "libdlf" %}
-{% set version = "0.0.4" %}
+{% set version = "0.0.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: de382f2071950b0e4344ac6ab46e54efaba205eda90c6c49845f5cb35e795fdb
-  patches:
-    # The package is originally created in `libdlf/packages/python`; this means
-    # that setup.py has `use_scm_version={"root": "../../"}` etc - which
-    # directories do not exist in the tarball. The following patch corrects
-    # this. Ideally, this should eventually be resolved within the setup with
-    # setuptools_scm.
-    - setup.patch
+  sha256: 35c899fdda0aba80780c35396c2ac57c2fe2c2e9a169875c8fb9cab81a0eceaa
 
 build:
   noarch: python
@@ -26,7 +19,6 @@ requirements:
   host:
     - pip
     - python >=3.6
-    - setuptools_scm
   run:
     - python >=3.6
     - numpy
