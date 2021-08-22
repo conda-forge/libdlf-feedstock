@@ -1,5 +1,5 @@
 {% set name = "libdlf" %}
-{% set version = "0.1.3" %}
+{% set version = "0.1.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: af7718ec087bfed242837fcc2bfb4705f08218672bf1fd88515d2b08bd7ec300
+  sha256: a826a85219c40ad8f50e1f002075a6f1edfa994eaf7d9d57b970f3ae74161a4d
 
 build:
   noarch: python
