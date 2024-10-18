@@ -1,5 +1,5 @@
 {% set name = "libdlf" %}
-{% set version = "0.2.0" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 21347cf66bdc1d1049a91da3f4586d985eea7bfce392f69fbae2437fc23efeb4
+  sha256: 7a3352b01d4f8ab9ac929b1567d09c57b95415e67d9da02d54f5b4d00a3226d9
 
 build:
   noarch: python
@@ -18,9 +18,11 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.10
+    - setuptools
+    - setuptools_scm
   run:
-    - python >=3.6
+    - python >=3.10
     - numpy
 
 test:
